@@ -9,7 +9,9 @@
                     <a href="{{ Storage::url($foto->lokasi_file) }}" data-lightbox="gallery" data-title="{{ $foto->judul_foto }}">
                         <img src="{{ Storage::url($foto->lokasi_file) }}" class="img-fluid foto-thumbnail" alt="{{ $foto->judul_foto }}">
                     </a>
-                    <h5 class="foto-title">{{ $foto->judul_foto }}</h5>
+                    <h5 class="foto-title">
+                        <a href="{{ route('foto.show', $foto->foto_id) }}">{{ $foto->judul_foto }}</a>
+                    </h5>
                     <p class="foto-album">Album: {{ $foto->album->nama_album }}</p> <!-- Tampilkan nama album -->
                     <p class="foto-user">Uploaded by: {{ $foto->user->name }}</p> <!-- Tampilkan nama user -->
                     <div class="foto-description">{{ $foto->deskripsi_foto }}</div>

@@ -54,6 +54,17 @@
         border-radius: 5px;
         font-size: 14px;
     }
+    
+    .foto-title a {
+        color: #000; /* Warna default dari judul */
+        text-decoration: none; /* Menghilangkan garis bawah */
+        transition: color 0.3s; /* Membuat transisi warna halus */
+    }
+
+    .foto-title a:hover {
+        color: #800000; /* Warna maroon saat hover */
+        cursor: pointer; /* Mengubah cursor menjadi tangan */
+    }
     </style>
 </head>
 <body>

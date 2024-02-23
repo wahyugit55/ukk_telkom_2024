@@ -50,4 +50,10 @@ class User extends Authenticatable
         return $this->hasMany(Album::class, 'user_id', 'id');
     }
 
+    public function likes()
+    {
+        return $this->hasMany(LikeFoto::class, 'user_id', 'id');
+    }
+
+
 }

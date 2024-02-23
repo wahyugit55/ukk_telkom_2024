@@ -43,4 +43,10 @@ class FotoController extends Controller
         return redirect()->route('foto.index')->with('success', 'Foto has been added');
     }
 
+    public function show($id)
+    {
+        $foto = Foto::with(['album', 'user', 'komentars.user'])->findOrFail($id); // Eager load relations
+        return view('fotos.show', compact('foto'));
+    }
+
 }

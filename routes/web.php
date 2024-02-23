@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\FotoController;
+use App\Http\Controllers\KomentarFotoController;
+use App\Http\Controllers\LikeFotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [FotoController::class, 'index'])->name('index');
         Route::get('/create', [FotoController::class, 'create'])->name('create');
         Route::post('/store', [FotoController::class, 'store'])->name('store');
+        Route::get('/{id}', [FotoController::class, 'show'])->name('show');
 
     });
 });
@@ -57,3 +60,7 @@ Route::name('auth.')->group(function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 });
+
+// Route untuk menangani komentar foto
+Route::post('/komentar', [KomentarFotoController::class, 'store'])->name('komentar.store')->middleware('auth');
+Route::post('/likefoto', [LikeFotoController::class, 'toggleLike'])->name('like.toggle')->middleware('auth');
