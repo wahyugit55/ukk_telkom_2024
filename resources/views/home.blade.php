@@ -9,9 +9,10 @@
         @forelse($photos as $photo)
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <img src="{{ $photo->url }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                    <!-- Pastikan untuk memperbarui path pada src sesuai dengan lokasi penyimpanan file Anda -->
+                    <img src="{{ Storage::url($photo->lokasi_file) }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
                     <div class="card-body">
-                        <p class="card-text">{{ $photo->description }}</p>
+                        <p class="card-text">{{ $photo->deskripsi_foto }}</p>
                     </div>
                 </div>
             </div>

@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Foto; // Pastikan menggunakan model yang sesuai
 
 class HomeController extends Controller
 {
     public function index()
     {
-        // Sementara kita akan mengirimkan array kosong, nanti akan diisi dengan data foto
-        return view('home', ['photos' => []]);
+        $photos = Foto::all(); // Mengambil semua foto dari database
+        return view('home', ['photos' => $photos]);
     }
 }
