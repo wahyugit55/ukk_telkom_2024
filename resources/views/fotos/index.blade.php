@@ -3,6 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row">
+        <div class="col-md-12">
+            @auth
+                <a href="{{ route('foto.create') }}" class="btn btn-primary mb-3">Tambah Foto</a>
+            @endauth
+
+        </div>
+    </div>
+    <div class="row">
         @foreach($fotos as $foto)
             <div class="col-md-4 mb-4">
                 <div class="foto-container">
